@@ -1,6 +1,6 @@
 # JSX Logic Structure Matters
 
-It might seem like these two pieces of code are equivalent, but they result in different behaviors in regards to component state:
+It might seem like these two pieces of code are equivalent, but they result in different behaviors in regard to component state:
 
 ```jsx
 function Example1({isFirstItem}) {
@@ -21,7 +21,8 @@ function Example2({isFirstItem}) {
 }
 ```
 
-In `Example1` the two `Input` components take up the same position in the render tree, and since they are the same component type, they will also reuse the same state. 
+In `Example1` the two `Input` components take up the same position in the render tree, 
+and since they are the same component type (and do not use a `key` prop to differentiate them), they will also reuse the same state. 
 
 In `Example2`, it appears that it would be the same case, since you're only going to render one of those two `Input` components based on `isFirstItem`.
 However, there are two separate JSX statements there, and when it's transpiled down, you end up with two children for that `div` instead of one, so they will never share the same state.
