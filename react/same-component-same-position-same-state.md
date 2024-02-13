@@ -40,3 +40,24 @@ function Parent({hasMoreStuff}) {
 
 [React Docs](https://react.dev/learn/preserving-and-resetting-state#same-component-at-the-same-position-preserves-state)
 
+The position includes the types of elements in the tree as well, not just the topological location.
+If you change the type of a component/element in the tree, then it resets the state for its children also.
+
+```jsx
+function Parent({isSection}) {
+    if (isSection) {
+        return (
+            <section>
+                <Counter/>
+            </section>
+        );
+    }
+    
+    return (
+        <div>
+            <Counter/>
+        </div>
+    );
+}
+```
+
