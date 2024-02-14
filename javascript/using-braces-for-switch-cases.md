@@ -33,3 +33,5 @@ function getAnswer(thing) {
     }
 }
 ```
+
+I noticed this while reading the new [React docs](https://react.dev/learn/extracting-state-logic-into-a-reducer#step-2-write-a-reducer-function)
